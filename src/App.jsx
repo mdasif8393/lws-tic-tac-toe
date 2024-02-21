@@ -84,21 +84,21 @@ export default function Game() {
       description = `Go to the start the game`;
     }
     return (
-      <li key={move}>
+      <li className="bg-gray-700 text-white mb-1 p-1 rounded" key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
 
   return (
-    <>
-      <div>
+    <div className="flex justify-center p-4">
+      <div className="mr-16">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div>
+      <div className="border border-gray-400 p-1 text-lg">
         <ol>{moves}</ol>
       </div>
-    </>
+    </div>
   );
 }
 
